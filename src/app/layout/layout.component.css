@@ -129,7 +129,8 @@
   background-color: var(--bg-light);
   background: 
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url('/a.gif') no-repeat center center / cover
+    url('/Sitio_Estructura_SHD/assets/a.gif') no-repeat center center / cover; 
+    /* cambiar a url('/assets/a.gif') en local */
 }
 
 /* Breadcrumb */
