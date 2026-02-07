@@ -1,0 +1,122 @@
+<div class="container">
+
+  <mat-card class="page-title-card">
+    <mat-card-content>
+      <h1>Búsqueda en el sitio</h1>
+      <p>
+        Permite localizar contenido mediante palabras clave o filtros avanzados.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-title>Búsqueda simple</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Palabras clave</mat-label>
+        <input
+          matInput
+          placeholder="Ej: menú, breadcrumbs, mapa..."
+          [(ngModel)]="query"
+          (keyup.enter)="doSearch()"
+        />
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+
+      <div class="actions">
+        <button (click)="doSearch()">
+          Buscar
+        </button>
+
+        <button (click)="clear()">
+          Limpiar
+        </button>
+      </div>
+
+      <small class="hint">
+        Tip: escribe una palabra y presiona Enter.
+      </small>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- ======================
+       BÚSQUEDA AVANZADA
+  ======================= -->
+  <mat-card>
+    <mat-card-title>Búsqueda avanzada</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <div class="filters">
+
+<mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Tipo</mat-label>
+          <mat-select [(ngModel)]="filters.type" (selectionChange)="doSearch()">
+            <mat-option value="todos">Todos</mat-option>
+            <mat-option value="pagina">Página</mat-option>
+            <mat-option value="seccion">Sección</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+<mat-form-field appearance="outline" floatLabel="always">
+          <mat-label>Sección / tema</mat-label>
+          <mat-select [(ngModel)]="filters.section" (selectionChange)="doSearch()">
+            <mat-option value="todas">Todas</mat-option>
+            <mat-option *ngFor="let s of sections" [value]="s">
+              {{ s }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+      <small class="hint">
+        Los filtros acotan resultados sin necesidad de escribir más palabras.
+      </small>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Resultados</mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <ng-container *ngIf="results$ | async as results">
+
+        <mat-card *ngIf="results.length === 0" class="empty-state">
+          <mat-card-content>
+            <mat-icon>warning</mat-icon>
+            <p>No se encontraron resultados con los criterios actuales.</p>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-nav-list *ngIf="results.length > 0">
+  <a
+    mat-list-item
+    *ngFor="let item of results"
+    [routerLink]="item.path"
+    class="result-item"
+  >
+    <div class="item-content-wrapper">
+      <div class="text-group">
+        <h3 class="title">{{ item.tittle }}</h3>
+        <p class="description">{{ item.description }}</p>
+      </div>
+      
+      <mat-chip-set class="section-chip-container">
+        <mat-chip class="section-chip">
+          {{ item.section }}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+  </a>
+</mat-nav-list>
+
+      </ng-container>
+    </mat-card-content>
+  </mat-card>
+
+</div>

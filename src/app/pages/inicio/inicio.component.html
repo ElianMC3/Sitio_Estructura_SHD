@@ -1,0 +1,163 @@
+<div class="container">
+
+  <mat-card class="intro-card">
+    <mat-card-content>
+      <p class="inicio">inicio works!</p>
+      <h1>Angular</h1>
+      <p>
+        Angular es un framework frontend mantenido por Google,
+        ideal para crear aplicaciones web modernas de una sola página (SPA).
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      <mat-icon>account_tree</mat-icon> Estructuras de Organización
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="sitemap-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); display: grid; gap: 16px;">
+        <div class="struct-item">
+          <strong style="color: var(--text-color)">Estructura Jerárquica</strong>
+          <p class="description">Organización en niveles de importancia.</p>
+        </div>
+        <div class="struct-item">
+          <strong style="color: var(--text-color)">Estructura Lineal</strong>
+          <p class="description">Navegación secuencial paso a paso.</p>
+        </div>
+        <div class="struct-item">
+          <strong style="color: var(--text-color)">Estructura en RED</strong>
+          <p class="description">Interconexión libre entre contenidos.</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      <mat-icon>edit_note</mat-icon> Redacción Apropiada para Web
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>check_circle</mat-icon>
+          <div matListItemTitle>Lenguaje claro y conciso</div>
+          <div matListItemLine>Evita párrafos extensos; directo al punto.</div>
+        </mat-list-item>
+        
+        <mat-list-item>
+          <mat-icon matListItemIcon>visibility</mat-icon>
+          <div matListItemTitle>Formato visual estratégico</div>
+          <div matListItemLine>Uso de negritas y listas para facilitar el escaneo.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>format_size</mat-icon>
+          <div matListItemTitle>Jerarquía de encabezados (H1-H6)</div>
+          <div matListItemLine>Organiza la información para lectura y accesibilidad.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>record_voice_over</mat-icon>
+          <div matListItemTitle>Lenguaje del usuario</div>
+          <div matListItemLine>Sin tecnicismos innecesarios, enfocado en la audiencia.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>trending_up</mat-icon>
+          <div matListItemTitle>Optimización SEO</div>
+          <div matListItemLine>Uso estratégico de palabras clave para buscadores.</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="sitemap-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    <mat-card>
+      <mat-card-title>Características principales</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-chip-listbox>
+          <mat-chip>Componentes</mat-chip>
+          <mat-chip>TypeScript</mat-chip>
+          <mat-chip>Routing</mat-chip>
+          <mat-chip>Inyección de dependencias</mat-chip>
+        </mat-chip-listbox>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>Tipos de búsqueda</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <ul>
+          <li>Búsqueda simple y avanzada</li>
+          <li>Tiempo real y filtros</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="container">
+  <mat-card>
+    <mat-card-title>
+      <mat-icon>search_check</mat-icon> Tipos de Búsqueda
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="sitemap-grid">
+      <div class="search-type">
+        <h4 class="highlight-text">Búsqueda Simple</h4>
+        <p class="description">Basada principalmente en <strong>palabras clave</strong> directas para resultados rápidos.</p>
+        <mat-chip-listbox>
+          <mat-chip>Keywords</mat-chip>
+          <mat-chip>Indexación básica</mat-chip>
+        </mat-chip-listbox>
+      </div>
+
+      <div class="search-type">
+        <h4 class="highlight-text">Búsqueda Avanzada</h4>
+        <p class="description">Implementación de <strong>filtros y refinamiento</strong> para consultas complejas.</p>
+        <mat-chip-listbox>
+          <mat-chip>Filtros</mat-chip>
+          <mat-chip>Categorías</mat-chip>
+          <mat-chip>Rangos</mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      <mat-icon>hub</mat-icon> Búsqueda y Estructura del Sitio
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <p class="inicio">La búsqueda no es aislada; depende de una navegación sólida:</p>
+      
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>view_quilt</mat-icon>
+          <div matListItemTitle>Menú persistente</div>
+          <div matListItemLine>Garantiza el acceso al buscador desde cualquier sección de la app.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>route</mat-icon>
+          <div matListItemTitle>Breadcrumbs</div>
+          <div matListItemLine>Contextualizan al usuario tras realizar una búsqueda profunda.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>map</mat-icon>
+          <div matListItemTitle>Mapa del sitio</div>
+          <div matListItemLine>Permite visualizar la estructura jerárquica que los filtros organizan.</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  
+  </div>
+
+</div>

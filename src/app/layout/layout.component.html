@@ -1,0 +1,43 @@
+<header class="topbar">
+<div class="brand-wrapper">
+  <div class="brand">Sitio-Estructura</div>
+  <img src="/z.gif" routerLink="/" alt="Logo" class="brand-logo" />
+</div>
+
+    <nav class="menu">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        <a routerLink="/breadcrumbs" routerLinkActive="active">Breadcrumbs</a>
+        <a routerLink="/elementos" routerLinkActive="active">Elementos</a>
+        <a routerLink="/menu" routerLinkActive="active">Menú</a>
+        <a routerLink="/mapas-sitio" routerLinkActive="active">Mapa del Sitio</a>
+        <a routerLink="/busqueda" routerLinkActive="active">Búsqueda</a>
+    </nav>
+<form class="search-box" (submit)="$event.preventDefault(); goSearch()">
+  <div class="search-input-group">
+    <mat-icon class="search-icon">search</mat-icon>
+    <input
+      type="text"
+      placeholder="Buscar..."
+      [(ngModel)]="quickQuery"
+      name="quickQuery"
+      autocomplete="off"
+    />
+    <button type="submit" class="search-button">
+      <span>Ir</span>
+    </button>
+  </div>
+</form>
+</header>
+
+<!-- Contenido principal. -->
+<main class="content">
+  <!-- <router-outlet>: Aquí es donde Angular muestra la página actual.
+       Analogía: Es el escenario del teatro. El marco (header/footer) es fijo, pero en este hueco cambia la obra (la página). -->
+  <app-breadcrumb></app-breadcrumb>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Pie de página. También fijo. -->
+<footer class="footer">
+  <small>Desarrollo Web Profesional</small>
+</footer>

@@ -1,0 +1,207 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  animation: fadeInContainer 0.6s ease forwards;
+}
+
+/* ===== GRID DINÁMICO ===== */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* ===== TARJETAS (MAT-CARD) MEJORADAS ===== */
+mat-card {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardEntry 0.6s ease forwards;
+}
+
+/* Entrada escalonada automática */
+mat-card:nth-child(1) { animation-delay: 0.1s; }
+mat-card:nth-child(2) { animation-delay: 0.2s; }
+mat-card:nth-child(3) { animation-delay: 0.3s; }
+mat-card:nth-child(4) { animation-delay: 0.4s; }
+mat-card:nth-child(5) { animation-delay: 0.5s; }
+
+mat-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: #c3002f;
+  box-shadow: 0 18px 40px rgba(195, 0, 47, 0.2);
+}
+
+.intro-card {
+  background: linear-gradient(135deg, var(--bg-color) 0%, #1e1e1e 100%) !important;
+  border-left: 6px solid #c3002f;
+}
+
+mat-card-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  padding: 20px 20px 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.25s ease;
+}
+
+mat-card:hover mat-card-title {
+  transform: translateX(4px);
+}
+
+mat-card-title mat-icon {
+  color: #c3002f;
+  transition: transform 0.3s ease;
+}
+
+mat-card:hover mat-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+mat-card-content {
+  padding: 10px 20px 20px !important;
+}
+
+.inicio {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #c3002f;
+  margin-bottom: 8px;
+  display: block;
+}
+
+p, .description {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ===== COMPONENTES DE LISTA ===== */
+mat-list-item {
+  height: auto !important;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+mat-list-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+
+[matListItemTitle] {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+[matListItemLine] {
+  color: var(--text-light) !important;
+}
+
+/* ===== ESTRUCTURAS Y CHIPS ===== */
+.struct-item {
+  padding: 15px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  transition: all 0.25s ease;
+}
+
+.struct-item:hover {
+  transform: translateY(-2px);
+  border-color: #c3002f;
+}
+
+.struct-item strong {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+mat-chip {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border: 1px solid #444 !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+mat-chip:hover {
+  transform: scale(1.05);
+  border-color: #c3002f !important;
+}
+
+/* ===== SECCIÓN DE BÚSQUEDA ===== */
+.search-type {
+  border-left: 3px solid #c3002f;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+.highlight-text {
+  color: #ffffff;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* ===== ELEMENTOS TÉCNICOS (CODE) ===== */
+code {
+  background: #2a2a2a;
+  color: #e6db74;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

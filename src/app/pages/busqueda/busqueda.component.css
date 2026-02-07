@@ -1,0 +1,232 @@
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.container {
+  max-width: 1050px;
+  margin: 40px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: fadeContainer 0.5s ease forwards;
+}
+
+/* =========================
+   TARJETA TÍTULO
+========================= */
+.page-title-card {
+  background: linear-gradient(135deg, #1e1e1e, var(--bg-color)) !important;
+  border-left: 6px solid #c3002f;
+}
+
+.page-title-card h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.page-title-card p {
+  margin-top: 6px;
+  color: var(--text-light);
+}
+
+/* =========================
+   MAT CARD BASE
+========================= */
+mat-card {
+  border-radius: 16px;
+  background-color: var(--bg-color) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardEntry 0.5s ease forwards;
+}
+
+mat-card:hover {
+  transform: translateY(-4px);
+  border-color: #c3002f;
+}
+
+/* =========================
+   TITULOS
+========================= */
+mat-card-title {
+  padding: 18px 20px 10px !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+mat-card-content {
+  padding: 16px 20px 20px !important;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.actions button {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.actions button:hover {
+  background: #c3002f;
+  border-color: #c3002f;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HINT TEXT
+========================= */
+.hint {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   FILTROS GRID
+========================= */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 18px;
+}
+
+/* =========================
+   RESULTADOS
+========================= */
+.result-item {
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: all 0.25s ease;
+}
+
+.result-item:hover {
+  background: rgba(70, 36, 36, 0.503);
+  transform: translateX(5px);
+}
+
+.item-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* =========================
+   CHIPS
+========================= */
+.section-chip-container {
+  display: flex;
+  align-items: center;
+}
+
+.section-chip {
+  background: #2a2a2a !important;
+  border: 1px solid #444 !important;
+  color: #ffffff !important;
+  transition: all 0.25s ease;
+}
+
+.section-chip:hover {
+  transform: scale(1.05);
+  border-color: #c3002f !important;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty-state {
+  text-align: center;
+  padding: 25px;
+  animation: fadePop 0.4s ease;
+}
+
+.empty-state mat-icon {
+  font-size: 36px;
+  color: #c3002f;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: var(--text-light);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadePop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeContainer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

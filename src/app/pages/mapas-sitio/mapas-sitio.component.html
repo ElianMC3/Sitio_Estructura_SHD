@@ -1,0 +1,74 @@
+<div class="sitemap-wrapper">
+
+  <!-- CARD INTRO -->
+  <mat-card class="intro-card">
+    <mat-card-content>
+      <h1>Mapa del sitio</h1>
+      <p>
+        Un mapa del sitio es una representación estructurada de todas las páginas
+        y secciones disponibles dentro de una aplicación o sitio web. Facilita la
+        navegación, mejora la organización del contenido y permite a los usuarios
+        localizar rápidamente la información que necesitan.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- CARD PRINCIPAL -->
+  <mat-card class="sitemap-card">
+    <mat-card-header>
+      <mat-card-title>Mapa del Sitio</mat-card-title>
+      <mat-card-subtitle>Índice general de navegación</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="sitemap-grid">
+
+      <section>
+        <h3 class="section-title"><mat-icon>home</mat-icon> Principal</h3>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/">
+            <mat-icon matListItemIcon>dashboard</mat-icon>
+            <span matListItemTitle>Inicio</span>
+          </a>
+          <a mat-list-item routerLink="/busqueda">
+            <mat-icon matListItemIcon>search</mat-icon>
+            <span matListItemTitle>Búsqueda</span>
+          </a>
+        </mat-nav-list>
+      </section>
+
+      <section>
+        <h3 class="section-title"><mat-icon>layers</mat-icon> UI & Componentes</h3>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/elementos">
+            <mat-icon matListItemIcon>widgets</mat-icon>
+            <span matListItemTitle>Elementos del Sitio</span>
+          </a>
+          <a mat-list-item routerLink="/menu">
+            <mat-icon matListItemIcon>menu</mat-icon>
+            <span matListItemTitle>Menú</span>
+          </a>
+          <a mat-list-item routerLink="/breadcrumbs">
+            <mat-icon matListItemIcon>chevron_right</mat-icon>
+            <span matListItemTitle>Breadcrumbs</span>
+          </a>
+        </mat-nav-list>
+      </section>
+
+      <section>
+        <h3 class="section-title"><mat-icon>settings</mat-icon> Sistema</h3>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/error-404">
+            <mat-icon matListItemIcon>error_outline</mat-icon>
+            <span matListItemTitle>Página 404</span>
+          </a>
+          <a mat-list-item routerLink="/mapas-sitio" class="active-link">
+            <mat-icon matListItemIcon>map</mat-icon>
+            <span matListItemTitle>Mapa del Sitio</span>
+          </a>
+        </mat-nav-list>
+      </section>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>

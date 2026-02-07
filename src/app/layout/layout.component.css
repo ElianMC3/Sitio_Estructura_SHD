@@ -1,0 +1,234 @@
+/* =========================
+   TOPBAR / HEADER
+========================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+
+  background: linear-gradient(
+    135deg,
+    var(--bg-color) 0%,
+    var(--bg-light) 100%
+  );
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c3002f;
+  white-space: nowrap;
+}
+
+/* ===== BRAND WRAPPER ===== */
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 38px;
+  width: 38px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform .25s ease;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes logoFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0px); }
+}
+
+.brand-logo {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+
+/* micro animación hover */
+.brand-wrapper:hover .brand-logo {
+  transform: scale(2.00) rotate(1deg);
+}
+
+
+/* =========================
+   MENÚ DE NAVEGACIÓN
+========================= */
+.menu {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  position: relative;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--text-light);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: var(--bg-light);
+  color: var(--text-color);
+}
+
+/* Ruta activa */
+.menu a.active {
+  color: #c3002f; /* rojo Angular */
+  font-weight: 600;
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -4px;
+  height: 2px;
+  background-color: #c3002f;
+  border-radius: 2px;
+}
+
+/* =========================
+   BUSCADOR RÁPIDO
+========================= */
+.topbar form {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  border-radius: 6px;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+.content {
+  min-height: calc(100vh - 120px);
+  padding: 24px;
+  background-color: var(--bg-light);
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('/a.gif') no-repeat center center / cover
+}
+
+/* Breadcrumb */
+app-breadcrumb {
+  display: block;
+  margin-bottom: 16px;
+  padding: 10px 16px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  padding: 12px 24px;
+  text-align: center;
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   BUSCADOR RÁPIDO (MEJORADO)
+========================= */
+.search-box {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-light); 
+  border: 1px solid var(--border-color);
+  border-radius: 20px; 
+  padding: 2px 2px 2px 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 220px; /* Ancho inicial */
+}
+
+.search-input-group:focus-within {
+  width: 280px; 
+  background-color: var(--bg-color);
+  border-color: #c3002f; 
+  box-shadow: 0 0 0 3px rgba(195, 0, 47, 0.1);
+}
+
+.search-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-light);
+  margin-right: 8px;
+}
+
+.search-input-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff; /* Letras blancas para legibilidad */
+  font-size: 0.85rem;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.search-input-group input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.search-button {
+  background-color: #c3002f;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background-color: #a00026;
+}
+
+@media (max-width: 600px) {
+  .search-input-group {
+    width: 150px;
+  }
+  .search-input-group:focus-within {
+    width: 180px;
+  }
+}

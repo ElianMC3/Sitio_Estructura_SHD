@@ -1,0 +1,59 @@
+.error-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px); /* Ajustado para que no salga scroll si tienes topbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.background-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto hace que el gif llene todo sin deformarse */
+  z-index: 1;
+}
+
+/* Capa oscura para que el texto resalte sobre el GIF */
+
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff; /* Letras en blanco */
+}
+
+h1 {
+  font-size: clamp(5rem, 15vw, 10rem); /* Tamaño fluido */
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+}
+
+/* Botón con el estilo de tu aplicación */
+.btn-back {
+  background-color: #c3002f !important; /* Tu rojo Angular */
+  color: white !important;
+  padding: 8px 24px !important;
+  border-radius: 50px !important;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(195, 0, 47, 0.4);
+}
